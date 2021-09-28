@@ -22,4 +22,4 @@ function createTableLivros() {
   `)
 }
 
-module.exports = { pool, createTableEditoras, createTableLivros }
+module.exports = { pool, createTableLivros }
