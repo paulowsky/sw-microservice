@@ -4,7 +4,8 @@ const express = require('express')
 const cors = require('cors')
 const httpProxy = require('express-http-proxy')
 
-const userRoutes = require('./routes/user')
+const checkAuth = require('./middlewares/check_auth')
+
 const authRoutes = require('./routes/auth')
 
 const livrosServiceProxy = httpProxy(process.env.API_LIVROS_URL)
@@ -29,22 +30,19 @@ app.use((req, res, next) => {
 // Auth
 app.use('/', authRoutes)
 
-// Users
-app.use('/user', userRoutes)
-
 // Livros
-app.all('/livro', (req, res, next) => {
+app.all('/livro', checkAuth, (req, res, next) => {
   livrosServiceProxy(req, res, next)
 })
-app.all('/livro/:id', (req, res, next) => {
+app.all('/livro/:id', checkAuth, (req, res, next) => {
   livrosServiceProxy(req, res, next)
 })
 
 // Editoras
-app.all('/editora', (req, res, next) => {
+app.all('/editora', checkAuth, (req, res, next) => {
   editorasServiceProxy(req, res, next)
 })
-app.all('/editora/:id', (req, res, next) => {
+app.all('/editora/:id', checkAuth, (req, res, next) => {
   editorasServiceProxy(req, res, next)
 })
 
