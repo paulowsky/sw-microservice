@@ -76,7 +76,7 @@ exports.deleteLivro = (req, res) => {
     [id], (error, results) => {
       if (error || results.rowCount == 0) {
         return res.status(401).json({ status: 'error', 
-        message: 'Error when removing Livro!' })
+        message: 'Error when removing Livro!', error })
       }
       res.status(201).json({ status: 'success', 
       message: 'Livro removed!' })
