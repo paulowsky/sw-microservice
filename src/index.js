@@ -11,7 +11,7 @@ const authRoutes = require('./routes/auth')
 const livrosServiceProxy = httpProxy(process.env.API_LIVROS_URL)
 const editorasServiceProxy = httpProxy(process.env.API_EDITORAS_URL)
 
-const port = process.env.port
+const port = process.env.PORT
 
 const app = express()
 
