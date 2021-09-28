@@ -1,0 +1,69 @@
+### ---------------------------------------------- EDITORA
+
+### Get editora
+GET http://localhost:3000/editora HTTP/1.1
+content-type: application/json
+
+### Get editora by id
+GET http://localhost:3000/editora/1 HTTP/1.1
+content-type: application/json
+
+### Add editora
+POST http://localhost:3000/editora HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Editora",
+  "website": "editora.com"
+}
+
+### Update editora
+PUT http://localhost:3000/editora HTTP/1.1
+content-type: application/json
+
+{
+  "id": 1,
+  "name": "Editora Edited",
+  "website": "edited.editora.com"
+}
+
+### Delete editora
+DELETE http://localhost:3000/editora/1 HTTP/1.1
+content-type: application/json
+
+### ---------------------------------------------- LIVRO
+
+### Get livro
+GET http://localhost:3000/livro HTTP/1.1
+content-type: application/json
+
+### Get livro by id
+GET http://localhost:3000/livro/1 HTTP/1.1
+content-type: application/json
+
+### Add livro
+POST http://localhost:3000/livro HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Livro",
+  "description": "Descrição do livro.",
+  "price": "200.00",
+  "editora": 1
+}
+
+### Update livro
+PUT http://localhost:3000/livro HTTP/1.1
+content-type: application/json
+
+{
+  "id": 1,
+  "title": "Livro Editado",
+  "description": "Descrição do livro editada.",
+  "price": "250.00",
+  "editora": 1
+}
+
+### Delete livro
+DELETE http://localhost:3000/livro/1 HTTP/1.1
+content-type: application/json
