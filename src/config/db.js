@@ -18,30 +18,6 @@ function createTableUsers() {
       password varchar(30) not null,
       nick varchar(12) not null
     );
-
-    INSERT INTO users (
-      name,
-      email,
-      password,
-      nick
-    ) VALUES (
-      'Paulo',
-      'paulo@paulo.com',
-      'paulo',
-      'paulowsky'
-    );
-
-    INSERT INTO users (
-      name,
-      email,
-      password,
-      nick
-    ) VALUES (
-      'Daniel',
-      'daniel@daniel.com',
-      'daniel',
-      'danielzao'
-    );
   `)
 }
 
